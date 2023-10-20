@@ -1,0 +1,117 @@
+﻿@model P08_Videogames.Models.Gamez
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Gamez</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <select asp-for="Genre" class="form-control" >
+                    <option value="">Seleccione</option>
+                    <option value="Action">Atzion</option>
+                    <option value="Adventure">Ducktales</option>
+                    <option value="Fighting">Los Haduken</option>
+                    <option value="Platform">Marios</option>
+                    <option value="Puzzle">Zutma</option>
+                    <option value="RPG">Los Chrono</option>
+                    <option value="Shooter">Piu Piu</option>
+                    <option value="Simulator">Wanna be</option>
+                    <option value="Strategy">Los Age</option>
+                    <option value="Visual Novel">Visual keis</option>
+                    <option value="Terror">Los Outlast</option>
+                    <option value="Hack&Slash">Los Onimusha</option>
+                </select>
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Release" class="control-label"></label>
+                <input asp-for="Release" class="form-control" />
+                <span asp-validation-for="Release" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publisher" class="control-label"></label>
+                <input asp-for="Publisher" class="form-control" />
+                <span asp-validation-for="Publisher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Developer" class="control-label"></label>
+                <input asp-for="Developer" class="form-control" />
+                <span asp-validation-for="Developer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Platform" class="control-label"></label>
+                 <select asp-for="Platform" class="form-control" >
+                    <option value="">Seleccione</option>
+                    <option value="Nintendo">Switch</option>
+                    <option value="Microsoft">XBox</option>
+                    <option value="Mobile">Cell Games</option>
+                    <option value="PC">Conpiuta</option>
+                    <option value="Sony">PlayStation</option>
+                </select>
+
+                <span asp-validation-for="Platform" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Players" class="control-label"></label>
+                <select asp-for="Players" class="form-control">
+                    <option value="">Cant. Jugadores</option>
+                    <option value="1">Solo</option>
+                    <option value="1 + O">Solo + online</option>
+                    <option value="2">Parejas</option>
+                    <option value="4">Grupo de 4</option>
+                    <option value="8">Grupo de 8</option>
+                    <option value="O">Online</option>
+                    <option value="M">Multiplayer</option>
+                </select>
+                <span asp-validation-for="Players" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <select asp-for="Rating" class="form-control" >
+                    <option value="">Seleccione</option>
+                    <option value="E">Everybody</option>
+                    <option value="E+10">10 and older</option>
+                    <option value="T">Teen</option>
+                    <option value="M">Mature</option>
+                    <option value="A">Adults Only</option>
+                </select>
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
